@@ -1,7 +1,9 @@
+import LogInComp from "@/components/auth/logIn/page";
+
 const Login=()=>{
     return (
         <div>
-            Welcome Login Home!
+            <LogInComp/>
         </div>
     );
 }

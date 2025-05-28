@@ -1,26 +1,85 @@
-@import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--bg-color);
+  font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #222;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+
+:root {
+  --border-color: #e0e0e0;
+  --error-color: #e53935;
+  --primary-color: #1976d2;
+  --primary-hover: #1565c0;
+  --bg-color: #f8fafc;
+  --input-bg: #fff;
+  --input-focus: #e3f2fd;
+  --shadow: 0 4px 24px rgba(30, 34, 90, 0.08);
+  --navbar-bg: linear-gradient(90deg, #e0e7ff 0%, #f3f4f6 100%);
+  --navbar-shadow: 0 4px 16px rgba(37, 99, 235, 0.07);
+  --navbar-brand-color: var(--primary-color);
+  --navbar-brand-hover: var(--primary-hover);
+  --navbar-link-color: #374151;
+  --navbar-link-hover-bg: #2563eb22;
+  --navbar-link-hover-color: var(--primary-color);
+  --theme-switcher-bg: #fff;
+  --theme-switcher-color: var(--primary-color);
+  --theme-switcher-border: var(--primary-color);
+  --theme-switcher-hover-bg: var(--primary-color);
+  --theme-switcher-hover-color: #fff;
+  --theme-switcher-hover-border: var(--primary-hover);
+}
+
+body.light-theme {
+  --bg-color: #f8fafc;
+  --input-bg: #fff;
+  --input-focus: #e3f2fd;
+  --border-color: #e0e0e0;
+  --error-color: #e53935;
+  --primary-color: #1976d2;
+  --primary-hover: #1565c0;
+  --shadow: 0 4px 24px rgba(30, 34, 90, 0.08);
+  --navbar-bg: linear-gradient(90deg, #e0e7ff 0%, #f3f4f6 100%);
+  --navbar-shadow: 0 4px 16px rgba(37, 99, 235, 0.07);
+  --navbar-brand-color: var(--primary-color);
+  --navbar-brand-hover: var(--primary-hover);
+  --navbar-link-color: #374151;
+  --navbar-link-hover-bg: #2563eb22;
+  --navbar-link-hover-color: var(--primary-color);
+  --theme-switcher-bg: #fff;
+  --theme-switcher-color: var(--primary-color);
+  --theme-switcher-border: var(--primary-color);
+  --theme-switcher-hover-bg: var(--primary-color);
+  --theme-switcher-hover-color: #fff;
+  --theme-switcher-hover-border: var(--primary-hover);
+}
+
+body.dark-theme {
+  --bg-color: #181a20;
+  --input-bg: #23272f;
+  --input-focus: #22262e;
+  --border-color: #333842;
+  --error-color: #ff6b6b;
+  --primary-color: #90caf9;
+  --primary-hover: #64b5f6;
+  --shadow: 0 4px 24px rgba(0, 0, 0, 0.32);
+  --navbar-bg: linear-gradient(90deg, #1e293b 0%, #1f2937 100%);
+  --navbar-shadow: 0 4px 16px rgba(30, 41, 59, 0.15);
+  --navbar-brand-color: var(--primary-color);
+  --navbar-brand-hover: var(--primary-hover);
+  --navbar-link-color: #e5e7eb;
+  --navbar-link-hover-bg: #2563eb22;
+  --navbar-link-hover-color: var(--primary-color);
+  --theme-switcher-bg: #1e293b;
+  --theme-switcher-color: #e5e7eb;
+  --theme-switcher-border: #374151;
+  --theme-switcher-hover-bg: var(--primary-color);
+  --theme-switcher-hover-color: #fff;
+  --theme-switcher-hover-border: var(--primary-hover);
+  
 }
