@@ -1,9 +1,11 @@
-import Image from "next/image";
+"use client";
 
-export default function Home() {
+import HomeComp from "@/components/home/page";
+
+export default function HomePage() {
   return (
     <div>
-      Welcome Todo Home!
+      <HomeComp />
     </div>
   );
 }

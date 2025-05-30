@@ -1,7 +1,6 @@
 // This is a server component by default (no "use client")
 import { Metadata } from "next";
-import SignUpComp from "@/components/auth/signUp/page"; // This is a client component
-
+import SignUpComp from "@/components/auth/signUp/page";
 
 export const metadata: Metadata = {
   title: "Todo App",
@@ -13,7 +12,7 @@ export const metadata: Metadata = {
 export default function SignUpPage() {
   return (
     <div>
-      <SignUpComp /> 
+      <SignUpComp />
     </div>
   );
 }

@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/global/navbar/page";
 import Footer from "@/components/global/footer/page";
 import StoreLayout from "@/components/global/storeLayout";
+import { GoogleTagManager } from "@next/third-parties/google";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -29,17 +30,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <GoogleTagManager gtmId="G-WGGJKQ7412" />
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <StoreLayout>
-        <Navbar />
-        <main style={{minHeight:'calc(100vh - 230px)'}}>
-        {children}
-        </main>
-        <Footer />
+          <Navbar />
+
+          <main>{children}</main>
+          <Footer />
         </StoreLayout>
-        
       </body>
     </html>
   );
