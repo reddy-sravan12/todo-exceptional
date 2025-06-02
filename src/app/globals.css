@@ -1,26 +1,141 @@
-@import "tailwindcss";
-
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--bg-color);
+  font-family: "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #222;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+:root {
+  --border-color: #e0e0e0;
+  --error-color: #e53935;
+  --primary-color: #1976d2;
+  --primary-hover: #1565c0;
+  --bg-color: #f8fafc;
+  --input-bg: #fff;
+  --input-focus: #e3f2fd;
+  --shadow: 0 4px 24px rgba(30, 34, 90, 0.08);
+  --navbar-bg: linear-gradient(90deg, #e0e7ff 0%, #f3f4f6 100%);
+  --navbar-shadow: 0 4px 16px rgba(37, 99, 235, 0.07);
+  --navbar-brand-color: var(--primary-color);
+  --navbar-brand-hover: var(--primary-hover);
+  --navbar-link-color: #374151;
+  --navbar-link-hover-bg: #2563eb22;
+  --navbar-link-hover-color: var(--primary-color);
+  --theme-switcher-bg: #fff;
+  --theme-switcher-color: var(--primary-color);
+  --theme-switcher-border: var(--primary-color);
+  --theme-switcher-hover-bg: var(--primary-color);
+  --theme-switcher-hover-color: #fff;
+  --theme-switcher-hover-border: var(--primary-hover);
+
+  /* New variables for cards and text */
+  --card-bg: #fff;
+  --card-bg-overlay: rgba(0, 0, 0, 0.4);
+  --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --card-shadow-hover: 0 8px 14px rgba(0, 0, 0, 0.15);
+  --card-title-color: #fff;
+  --card-title-completed: #b0b0b0;
+  --card-title-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
+  --card-desc-color: #f3f3f3;
+  --card-desc-shadow: 0 1px 4px rgba(0, 0, 0, 0.12);
+  --card-estimated-color: #ffd580;
+  --card-estimated-bg: rgba(0, 0, 0, 0.18);
+  --guitar-label-bg: rgba(34, 34, 34, 0.85);
+  --guitar-label-color: #ffd580;
+  --guitar-label-shadow: 0 2px 8px rgba(0, 0, 0, 0.13);
+  --guitar-label-text-shadow: 0 1px 4px rgba(0, 0, 0, 0.13);
+  --guitar-icon-bg: rgba(255, 255, 255, 0.12);
+  --guitar-icon-shadow: 0 2px 8px rgba(0, 0, 0, 0.13);
+  --heading-color: #0c7d77;
+  --heading-shadow: 0 2px 8px rgba(61, 171, 177, 0.08);
+}
+
+body.light-theme {
+  --bg-color: #f8fafc;
+  --input-bg: #fff;
+  --input-focus: #e3f2fd;
+  --border-color: #e0e0e0;
+  --error-color: #e53935;
+  --primary-color: #1976d2;
+  --primary-hover: #1565c0;
+  --shadow: 0 4px 24px rgba(30, 34, 90, 0.08);
+  --navbar-bg: linear-gradient(90deg, #e0e7ff 0%, #f3f4f6 100%);
+  --navbar-shadow: 0 4px 16px rgba(37, 99, 235, 0.07);
+  --navbar-brand-color: var(--primary-color);
+  --navbar-brand-hover: var(--primary-hover);
+  --navbar-link-color: #374151;
+  --navbar-link-hover-bg: #2563eb22;
+  --navbar-link-hover-color: var(--primary-color);
+  --theme-switcher-bg: #fff;
+  --theme-switcher-color: var(--primary-color);
+  --theme-switcher-border: var(--primary-color);
+  --theme-switcher-hover-bg: var(--primary-color);
+  --theme-switcher-hover-color: #fff;
+  --theme-switcher-hover-border: var(--primary-hover);
+
+  --card-bg: #fff;
+  --card-bg-overlay: rgba(0, 0, 0, 0.4);
+  --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --card-shadow-hover: 0 8px 14px rgba(0, 0, 0, 0.15);
+  --card-title-color: #fff;
+  --card-title-completed: #b0b0b0;
+  --card-title-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
+  --card-desc-color: #f3f3f3;
+  --card-desc-shadow: 0 1px 4px rgba(0, 0, 0, 0.12);
+  --card-estimated-color: #ffd580;
+  --card-estimated-bg: rgba(0, 0, 0, 0.18);
+  --guitar-label-bg: rgba(34, 34, 34, 0.85);
+  --guitar-label-color: #ffd580;
+  --guitar-label-shadow: 0 2px 8px rgba(0, 0, 0, 0.13);
+  --guitar-label-text-shadow: 0 1px 4px rgba(0, 0, 0, 0.13);
+  --guitar-icon-bg: rgba(255, 255, 255, 0.12);
+  --guitar-icon-shadow: 0 2px 8px rgba(0, 0, 0, 0.13);
+  --heading-color: rgb(5, 58, 26);
+  --heading-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+body.dark-theme {
+  --bg-color: #181a20;
+  --input-bg: #23272f;
+  --input-focus: #22262e;
+  --border-color: #333842;
+  --error-color: #ff6b6b;
+  --primary-color: #90caf9;
+  --primary-hover: #64b5f6;
+  --shadow: 0 4px 24px rgba(0, 0, 0, 0.32);
+  --navbar-bg: linear-gradient(90deg, #1e293b 0%, #1f2937 100%);
+  --navbar-shadow: 0 4px 16px rgba(30, 41, 59, 0.15);
+  --navbar-brand-color: var(--primary-color);
+  --navbar-brand-hover: var(--primary-hover);
+  --navbar-link-color: #e5e7eb;
+  --navbar-link-hover-bg: #2563eb22;
+  --navbar-link-hover-color: var(--primary-color);
+  --theme-switcher-bg: #1e293b;
+  --theme-switcher-color: #e5e7eb;
+  --theme-switcher-border: #374151;
+  --theme-switcher-hover-bg: var(--primary-color);
+  --theme-switcher-hover-color: #fff;
+  --theme-switcher-hover-border: var(--primary-hover);
+
+  --card-bg: #23272f;
+  --card-bg-overlay: rgba(0, 0, 0, 0.55);
+  --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.22);
+  --card-shadow-hover: 0 8px 14px rgba(0, 0, 0, 0.32);
+  --card-title-color: #e5e7eb;
+  --card-title-completed: #6b7280;
+  --card-title-shadow: 0 2px 8px rgba(0, 0, 0, 0.28);
+  --card-desc-color: #cbd5e1;
+  --card-desc-shadow: 0 1px 4px rgba(0, 0, 0, 0.22);
+  --card-estimated-color: #ffe082;
+  --card-estimated-bg: rgba(255, 255, 255, 0.08);
+  --guitar-label-bg: rgba(34, 34, 34, 0.85);
+  --guitar-label-color: #ffe082;
+  --guitar-label-shadow: 0 2px 8px rgba(0, 0, 0, 0.23);
+  --guitar-label-text-shadow: 0 1px 4px rgba(0, 0, 0, 0.23);
+  --guitar-icon-bg: rgba(255, 255, 255, 0.18);
+  --guitar-icon-shadow: 0 2px 8px rgba(0, 0, 0, 0.23);
+  --heading-color: #0c7d77;
+  --heading-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
 }

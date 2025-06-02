@@ -1,0 +1,6 @@
+{
+    "classical": "https://todo--bucket.s3.eu-north-1.amazonaws.com/music/classical.mp3",
+    "pop": "https://todo--bucket.s3.eu-north-1.amazonaws.com/music/pop.mp3",
+    "lofi": "https://todo--bucket.s3.eu-north-1.amazonaws.com/music/lofi.mp3",
+    "jazz": "https://todo--bucket.s3.eu-north-1.amazonaws.com/music/jazz.mp3"
+}

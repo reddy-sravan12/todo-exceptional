@@ -1,0 +1,134 @@
+.loginForm {
+  background: var(--input-bg);
+  box-shadow:
+    0 8px 32px rgba(30, 34, 90, 0.15),
+    0 1.5px 6px rgba(30, 34, 90, 0.04);
+  border-radius: 18px;
+  padding: 2.75rem 2.25rem 2.25rem 2.25rem;
+  max-width: 400px;
+  margin: 4rem auto 2rem auto;
+  border: 1.5px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  position: relative;
+  overflow: hidden;
+  animation: fadeInForm 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes fadeInForm {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.errorMsg {
+  color: #d32f2f;
+  background: #ffebee;
+  padding: 10px;
+  border-radius: 6px;
+  margin-bottom: 18px;
+  text-align: center;
+}
+
+.loginForm::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    var(--primary-color) 0%,
+    transparent 100%
+  );
+  opacity: 0.07;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.formLabel {
+  font-weight: 600;
+  color: var(--primary-color);
+  margin-bottom: 0.15rem;
+  letter-spacing: 0.01em;
+  font-size: 1.05rem;
+}
+
+.formInput {
+  padding: 0.85rem 1.1rem;
+  border: 1.5px solid var(--border-color);
+  border-radius: 8px;
+  background: var(--input-bg);
+  color: var(--navbar-link-color);
+  font-size: 1.05rem;
+  transition:
+    border-color 0.2s,
+    background 0.2s,
+    box-shadow 0.2s;
+  outline: none;
+  box-shadow: 0 1px 2px rgba(30, 34, 90, 0.04);
+}
+
+.formInput:focus {
+  border-color: var(--primary-color);
+  background: var(--input-focus);
+  box-shadow: 0 0 0 2px rgba(25, 118, 210, 0.12);
+}
+
+.submitBtn {
+  background: linear-gradient(
+    90deg,
+    var(--primary-color) 60%,
+    var(--primary-hover) 100%
+  );
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.85rem 1.1rem;
+  font-size: 1.08rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition:
+    background 0.2s,
+    transform 0.15s,
+    box-shadow 0.2s;
+  margin-top: 0.5rem;
+  box-shadow: 0 2px 8px rgba(25, 118, 210, 0.08);
+  letter-spacing: 0.02em;
+  z-index: 1;
+}
+
+.submitBtn:hover,
+.submitBtn:focus {
+  background: linear-gradient(
+    90deg,
+    var(--primary-hover) 60%,
+    var(--primary-color) 100%
+  );
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 4px 16px rgba(25, 118, 210, 0.13);
+}
+
+@media (max-width: 500px) {
+  .loginForm {
+    padding: 1.5rem 0.75rem;
+    max-width: 98vw;
+    gap: 1.2rem;
+  }
+  .submitBtn {
+    font-size: 1rem;
+    padding: 0.7rem 0.8rem;
+  }
+}
