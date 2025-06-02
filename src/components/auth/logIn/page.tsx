@@ -132,4 +132,4 @@ const LogInComp: React.FC = () => {
   );
 };
 
-export default ProtectedRoute(LogInComp);
+export default LogInComp;

@@ -201,4 +201,4 @@ const SignUpComp: React.FC = () => {
   );
 };
 
-export default ProtectedRoute(SignUpComp);
+export default SignUpComp;

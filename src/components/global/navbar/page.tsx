@@ -7,11 +7,13 @@ import { useSelector } from "react-redux";
 import { RootState } from "@/store/store";
 import { setUser } from "@/store/userSlice";
 import { useDispatch } from "react-redux";
+import Link from "next/link";
 
 const links = [
   { name: "Home", href: "/" },
   { name: "Tasks", href: "/tasks" },
   { name: "About", href: "/about" },
+  { name: "Add Todo", href: "/todo-form" },
 ];
 
 function ThemeSwitcher() {
@@ -39,7 +41,8 @@ const Navbar: React.FC = () => {
   const { user } = useSelector((store: RootState) => store.userSlice);
   const router = useRouter();
   const dispatch = useDispatch();
-  const [isUser, setIsUser] = useState<boolean>();
+  const [isUser, setIsUser] = useState<boolean>(false);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const tokenValue = localStorage.getItem("token");
@@ -48,6 +51,7 @@ const Navbar: React.FC = () => {
       (typeof user === "object" && Object.keys(user || {}).length !== 0) ||
         token,
     );
+    setIsLoading(false);
   }, [router, user]);
 
   const handleSignUp = () => {
@@ -71,32 +75,36 @@ const Navbar: React.FC = () => {
         <ul className={styles["navbar-links"]}>
           {links.map((link) => (
             <li key={link.name}>
-              <a href={link.href} className={styles["navbar-link"]}>
+              <Link href={link.href} className={styles["navbar-link"]}>
                 {link.name}
-              </a>
+              </Link>
             </li>
           ))}
         </ul>
       </div>
 
       <div className={styles["navbar-actions"]}>
-        <div className={styles["auth-buttons"]}>
-          {!isUser ? (
-            <>
-              {" "}
-              <button className={styles["auth-button"]} onClick={handleSignUp}>
-                Sign Up
+        {!isLoading && (
+          <div className={styles["auth-buttons"]}>
+            {isUser ? (
+              <button className={styles["auth-button"]} onClick={handleLogOut}>
+                LogOut
               </button>
-              <button className={styles["auth-button"]} onClick={handleLogin}>
-                Login
-              </button>
-            </>
-          ) : (
-            <button className={styles["auth-button"]} onClick={handleLogOut}>
-              LogOut
-            </button>
-          )}
-        </div>
+            ) : (
+              <>
+                <button
+                  className={styles["auth-button"]}
+                  onClick={handleSignUp}
+                >
+                  Sign Up
+                </button>
+                <button className={styles["auth-button"]} onClick={handleLogin}>
+                  Login
+                </button>
+              </>
+            )}
+          </div>
+        )}
         <ThemeSwitcher />
       </div>
     </nav>

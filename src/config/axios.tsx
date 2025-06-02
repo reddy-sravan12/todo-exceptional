@@ -1,3 +1,5 @@
+import store from "@/store/store";
+import { resetUser } from "@/store/userSlice";
 import axios from "axios";
 
 const axiosInstance = axios.create({
@@ -22,13 +24,15 @@ axiosInstance.interceptors.request.use(
 
 axiosInstance.interceptors.response.use(
   (response: any) => response,
+
   (error: any) => {
     if (
       error.response &&
       error.response.status === 401 &&
-      error.response.data.message === "token expired"
+      error.response.data.message === "Jwt expired Please try to login again"
     ) {
       localStorage.removeItem("token");
+      store.dispatch(resetUser());
       window.location.href = "/login"; // Redirect to login page
     }
     return Promise.reject(error);

@@ -14,8 +14,8 @@ const ProtectedRoute = (WrappedComponent: any) => {
     useEffect(() => {
       const token = localStorage.getItem("token");
       setToken(token);
-      if (token || Object.keys(user).length !== 0) {
-        router.replace("/");
+      if (!token && Object.keys(user).length === 0) {
+        router.replace("/login");
       }
     }, []);
 

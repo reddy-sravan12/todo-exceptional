@@ -7,7 +7,6 @@ body {
   min-height: 100vh;
   box-sizing: border-box;
 }
-
 :root {
   --border-color: #e0e0e0;
   --error-color: #e53935;
@@ -30,6 +29,27 @@ body {
   --theme-switcher-hover-bg: var(--primary-color);
   --theme-switcher-hover-color: #fff;
   --theme-switcher-hover-border: var(--primary-hover);
+
+  /* New variables for cards and text */
+  --card-bg: #fff;
+  --card-bg-overlay: rgba(0, 0, 0, 0.4);
+  --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --card-shadow-hover: 0 8px 14px rgba(0, 0, 0, 0.15);
+  --card-title-color: #fff;
+  --card-title-completed: #b0b0b0;
+  --card-title-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
+  --card-desc-color: #f3f3f3;
+  --card-desc-shadow: 0 1px 4px rgba(0, 0, 0, 0.12);
+  --card-estimated-color: #ffd580;
+  --card-estimated-bg: rgba(0, 0, 0, 0.18);
+  --guitar-label-bg: rgba(34, 34, 34, 0.85);
+  --guitar-label-color: #ffd580;
+  --guitar-label-shadow: 0 2px 8px rgba(0, 0, 0, 0.13);
+  --guitar-label-text-shadow: 0 1px 4px rgba(0, 0, 0, 0.13);
+  --guitar-icon-bg: rgba(255, 255, 255, 0.12);
+  --guitar-icon-shadow: 0 2px 8px rgba(0, 0, 0, 0.13);
+  --heading-color: #0c7d77;
+  --heading-shadow: 0 2px 8px rgba(61, 171, 177, 0.08);
 }
 
 body.light-theme {
@@ -54,6 +74,26 @@ body.light-theme {
   --theme-switcher-hover-bg: var(--primary-color);
   --theme-switcher-hover-color: #fff;
   --theme-switcher-hover-border: var(--primary-hover);
+
+  --card-bg: #fff;
+  --card-bg-overlay: rgba(0, 0, 0, 0.4);
+  --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --card-shadow-hover: 0 8px 14px rgba(0, 0, 0, 0.15);
+  --card-title-color: #fff;
+  --card-title-completed: #b0b0b0;
+  --card-title-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
+  --card-desc-color: #f3f3f3;
+  --card-desc-shadow: 0 1px 4px rgba(0, 0, 0, 0.12);
+  --card-estimated-color: #ffd580;
+  --card-estimated-bg: rgba(0, 0, 0, 0.18);
+  --guitar-label-bg: rgba(34, 34, 34, 0.85);
+  --guitar-label-color: #ffd580;
+  --guitar-label-shadow: 0 2px 8px rgba(0, 0, 0, 0.13);
+  --guitar-label-text-shadow: 0 1px 4px rgba(0, 0, 0, 0.13);
+  --guitar-icon-bg: rgba(255, 255, 255, 0.12);
+  --guitar-icon-shadow: 0 2px 8px rgba(0, 0, 0, 0.13);
+  --heading-color: rgb(5, 58, 26);
+  --heading-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
 body.dark-theme {
@@ -78,4 +118,24 @@ body.dark-theme {
   --theme-switcher-hover-bg: var(--primary-color);
   --theme-switcher-hover-color: #fff;
   --theme-switcher-hover-border: var(--primary-hover);
+
+  --card-bg: #23272f;
+  --card-bg-overlay: rgba(0, 0, 0, 0.55);
+  --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.22);
+  --card-shadow-hover: 0 8px 14px rgba(0, 0, 0, 0.32);
+  --card-title-color: #e5e7eb;
+  --card-title-completed: #6b7280;
+  --card-title-shadow: 0 2px 8px rgba(0, 0, 0, 0.28);
+  --card-desc-color: #cbd5e1;
+  --card-desc-shadow: 0 1px 4px rgba(0, 0, 0, 0.22);
+  --card-estimated-color: #ffe082;
+  --card-estimated-bg: rgba(255, 255, 255, 0.08);
+  --guitar-label-bg: rgba(34, 34, 34, 0.85);
+  --guitar-label-color: #ffe082;
+  --guitar-label-shadow: 0 2px 8px rgba(0, 0, 0, 0.23);
+  --guitar-label-text-shadow: 0 1px 4px rgba(0, 0, 0, 0.23);
+  --guitar-icon-bg: rgba(255, 255, 255, 0.18);
+  --guitar-icon-shadow: 0 2px 8px rgba(0, 0, 0, 0.23);
+  --heading-color: #0c7d77;
+  --heading-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
 }
